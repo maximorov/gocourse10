@@ -30,6 +30,9 @@ func main() {
 	rtr.HandleFunc("/healthcheck", func(rw http.ResponseWriter, r *http.Request) {
 		_, _ = rw.Write([]byte(`OK`))
 	})
+	rtr.HandleFunc("/point3", func(rw http.ResponseWriter, r *http.Request) {
+		_, _ = rw.Write([]byte(`I'm point 3'`))
+	})
 
 	http.Handle("/", rtr)
 
